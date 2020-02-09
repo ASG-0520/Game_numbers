@@ -9,14 +9,14 @@ while True:
     os.system('cls')
     print("\n    Запомни последовательность чисел за 3 секунды,\n"
           " после введи их через пробел.\n")
-    input("Press <ENTER> key to START GAME...")
+    input("Для начала игры нажминте <ENTER>")
     os.system('cls')
     sp = []
     sp_inp = []
     while sp == list(sp_inp):
         sp.append(random.randint(0, 9))
         print(sp)
-        input("Press <ENTER> to CONTINUE...")
+        time.sleep(3)
         os.system('cls')
         sp_inp = map(int, input(' ').split())
     # os.system('cls')
