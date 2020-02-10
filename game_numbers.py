@@ -8,7 +8,7 @@ init()
 print(Fore.CYAN + Style.DIM + "\n    Запомни последовательность чисел за 3 секунды,\n"
                               " как экран очистится введи их через пробел.\n" + Style.RESET_ALL)
 input(" Для начала игры нажмите <ENTER>")
-
+# os.system("pause")
 while True:
     os.system('cls')
     sp = []
