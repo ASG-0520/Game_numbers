@@ -23,5 +23,15 @@ while True:
                                      'Правильно: ' + Style.RESET_ALL + str(sp) +
           '\n' + Fore.GREEN + Style.BRIGHT + "\nТвой LVL = " + str(len(sp) - 1))
     print(Fore.RED + Style.BRIGHT + "\n### GAME OVER! ###" + Style.RESET_ALL)
+
+    file = open('Saves.txt', 'a')
+    file.write(' ' + str(len(sp) - 1) + ' lvl ' + input('\nВведите свое имя: ') + '\n')
+    file.close()
+
+    file = open("Saves.txt", "r")
+    data = file.readlines()
+    print('\n РЕКОРД:' + '\n\n' + max(data))
+    file.close()
+
     if input('\nПовторить?(y/n)') == 'n':
         break
