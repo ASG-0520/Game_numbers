@@ -10,14 +10,14 @@ print(Fore.CYAN + Style.DIM + "\n    Запомни последовательн
 input(" Для начала игры нажмите <ENTER>")
 
 while True:
-    os.system('cls')
+    os.system('cls' if os.name == 'nt' else 'clear')
     sp = []
     sp_inp = []
     while sp == list(sp_inp):
         sp.append(random.randint(0, 9))
         print(sp)
         time.sleep(3)
-        os.system('cls')
+        os.system('cls' if os.name == 'nt' else 'clear')
         sp_inp = map(int, input(' ').split())
     print(Fore.CYAN + Style.NORMAL + '\nТы ошибся!\n'
                                      'Правильно: ' + Style.RESET_ALL + str(sp) +
