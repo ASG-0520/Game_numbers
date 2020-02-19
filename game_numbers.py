@@ -7,17 +7,17 @@ from colorama import Fore, Back, Style
 init()
 print(Fore.CYAN + Style.DIM + "\n    Запомни последовательность чисел за 3 секунды,\n"
                               " как экран очистится введи их через пробел.\n" + Style.RESET_ALL)
-input(" Для начала игры нажмите <ENTER>")
+input(" for start press <ENTER>")
 # os.system("pause")
 while True:
-    os.system('cls')
+    os.system('clear')
     sp = []
     sp_inp = []
     while sp == list(sp_inp):
         sp.append(random.randint(0, 9))
         print(sp)
         time.sleep(3)
-        os.system('cls')
+        os.system('clear')
         sp_inp = map(int, input(' ').split())
     print(Fore.CYAN + Style.NORMAL + '\nТы ошибся!\n'
                                      'Правильно: ' + Style.RESET_ALL + str(sp) +
