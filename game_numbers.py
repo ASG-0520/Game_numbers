@@ -5,6 +5,7 @@ import Rus
 import Eng
 from colorama import init  # https://pypi.org/project/colorama/
 from colorama import Fore, Back, Style
+
 os.system('cls' if os.name == 'nt' else 'clear')
 language = int(input("Язык / language: \n"
                      "1 Ru  \n"
@@ -17,7 +18,6 @@ os.system('cls' if os.name == 'nt' else 'clear')
 init()
 print(Fore.CYAN + Style.DIM + text.rules + Style.RESET_ALL)
 input(text.start)
-# os.system("pause")
 while True:
     os.system('cls' if os.name == 'nt' else 'clear')
     sp = []
@@ -41,5 +41,16 @@ while True:
     print(text.record + '\n\n' + max(data))
     file.close()
 
-    if input(text.repeat) == 'n':
+    if input(text.repeat) == 'y':
+        print()
+    else:
         break
+
+    # repeat = (input(text.repeat))
+    #
+    # if repeat == "y":
+    #     print("next")
+    # elif repeat == "n":
+    #     break
+    # else:
+    #     break
