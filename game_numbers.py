@@ -7,8 +7,8 @@ from colorama import Fore, Back, Style
 init()
 print(Fore.CYAN + Style.DIM + "\n    Запомни последовательность чисел за 3 секунды,\n"
                               " как экран очистится введи их через пробел.\n" + Style.RESET_ALL)
-input(" Для начала игры нажмите <ENTER>")
-
+input(" for start press <ENTER>")
+# os.system("pause")
 while True:
     os.system('cls' if os.name == 'nt' else 'clear')
     sp = []
@@ -23,5 +23,15 @@ while True:
                                      'Правильно: ' + Style.RESET_ALL + str(sp) +
           '\n' + Fore.GREEN + Style.BRIGHT + "\nТвой LVL = " + str(len(sp) - 1))
     print(Fore.RED + Style.BRIGHT + "\n### GAME OVER! ###" + Style.RESET_ALL)
+
+    file = open('Saves.txt', 'a')
+    file.write(' ' + str(len(sp) - 1) + ' lvl ' + input('\nВведите свое имя: ') + '\n')
+    file.close()
+
+    file = open("Saves.txt", "r")
+    data = file.readlines()
+    print('\n РЕКОРД:' + '\n\n' + max(data))
+    file.close()
+
     if input('\nПовторить?(y/n)') == 'n':
         break
